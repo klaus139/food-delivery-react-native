@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-//import * as Animatable from 'react-native-animatable';
+
 import {
   View,
   Text,
@@ -8,7 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-//import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import {title} from '../../global/Styles';
 import Header from '../../components/Header';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
@@ -16,8 +16,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faLock} from '@fortawesome/free-solid-svg-icons';
 import {Button} from 'react-native-elements';
-//import {SocialIcon, Icon} from 'react-native-elements';
-//import {SocialIcon} from 'react-social-icons';
 
 export default function SigninScreen() {
   //const [textInput2Forcast, setTextInput2Forcast] = useState(false);
@@ -145,12 +143,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttomText: {
-    fontSize: 16,
+    fontSize: 13,
     color: '#000',
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 10,
     paddingLeft: 20,
-    fontWeight: 'bold',
   },
   textInput1: {
     borderWidth: 1,

@@ -18,6 +18,7 @@ export const parameters = {
 export const buttons = {
   signin: {
     backgroundColor: '#28b310',
+    borderRadius: 20,
   },
   signinText: {
     color: 'white',
