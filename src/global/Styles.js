@@ -14,3 +14,9 @@ export const colors = {
 export const parameters = {
   headerHeight: 40,
 };
+
+export const title = {
+  color: '#28b310',
+  fontSize: 25,
+  fontWeight: 'bold',
+};

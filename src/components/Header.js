@@ -3,14 +3,14 @@ import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors, parameters} from '../global/Styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+//import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
-export default function Header({title}) {
+export default function Header({title, type}) {
   return (
     <SafeAreaView style={styles.header}>
       <View style={styles.container}>
         <FontAwesomeIcon
-          icon={faArrowLeft}
+          icon={type}
           size={30}
           color={colors.headerText}
           onPress={() => {}}

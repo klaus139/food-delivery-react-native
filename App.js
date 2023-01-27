@@ -1,15 +1,17 @@
 import React from 'react';
 
-import {View, StyleSheet, StatusBar} from 'react-native';
-import Header from './src/components/Header';
+import {StyleSheet, StatusBar} from 'react-native';
+
 import {colors} from './src/global/Styles';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import SigninScreen from './src/screens/authScreens/SigninScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor={colors.statusbar} />
-      <Header title=" MY ACCOUNT" />
-    </View>
+    <SafeAreaProvider style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor={colors.statusBar} />
+      <SigninScreen />
+    </SafeAreaProvider>
   );
 }
 
