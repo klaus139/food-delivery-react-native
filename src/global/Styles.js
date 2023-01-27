@@ -7,8 +7,10 @@ export const colors = {
   gray5: '#e1e8ee',
   gray6: '#86939e',
   cardbackground: 'white',
+  statusBar: '#28b310',
+  headerText: 'white',
 };
 
 export const parameters = {
-  headerHeight: 50,
+  headerHeight: 40,
 };

@@ -1,12 +1,14 @@
 import React from 'react';
 
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import Header from './src/components/Header';
+import {colors} from './src/global/Styles';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header />
+      <StatusBar barStyle="light-content" backgroundColor={colors.statusbar} />
+      <Header title=" MY ACCOUNT" />
     </View>
   );
 }
