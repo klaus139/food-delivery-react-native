@@ -1,6 +1,13 @@
 import React, {useRef} from 'react';
 //import * as Animatable from 'react-native-animatable';
-import {View, Text, SafeAreaView, StyleSheet, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {title} from '../../global/Styles';
 import Header from '../../components/Header';
@@ -8,6 +15,9 @@ import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faLock} from '@fortawesome/free-solid-svg-icons';
+import {Button} from 'react-native-elements';
+//import {SocialIcon, Icon} from 'react-native-elements';
+//import {SocialIcon} from 'react-social-icons';
 
 export default function SigninScreen() {
   //const [textInput2Forcast, setTextInput2Forcast] = useState(false);
@@ -25,7 +35,7 @@ export default function SigninScreen() {
         <Text style={styles.text1}>Please enter your email and password</Text>
         <Text style={styles.text1}>Register with your account</Text>
       </View>
-      <View styles={{marginTop: 20}}>
+      <View styles={styles.text0}>
         <View style={styles.inputContainer}>
           <FontAwesomeIcon
             icon={faEnvelope}
@@ -62,6 +72,40 @@ export default function SigninScreen() {
           />
         </View>
       </View>
+      <TouchableOpacity>
+        <Button title="SIGN IN" buttonStyle={styles.button} />
+      </TouchableOpacity>
+      <View>
+        <Text style={styles.fpassword}>Forgot Password?</Text>
+      </View>
+      <View>
+        <Text style={styles.or}>OR</Text>
+      </View>
+      <TouchableOpacity>
+        <Button
+          title="Sign in with Facebook"
+          buttonStyle={styles.facebook}
+          onPress={() => {}}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Button
+          title="Sign in with Google"
+          buttonStyle={styles.google}
+          onPress={() => {}}
+        />
+      </TouchableOpacity>
+      <View>
+        <Text style={styles.buttomText}>New on XpressFood?</Text>
+      </View>
+      <TouchableOpacity onPress={() => {}}>
+        <Button
+          title="Create an account"
+          buttonStyle={styles.createAccount}
+          titleStyle={styles.createAccountText}
+          placeholder="Create an account"
+        />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -70,6 +114,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  socialIcon: {
+    marginTop: 10,
+    marginHorizontal: 20,
+    height: 50,
+    fontFamily: 'Roboto',
+    borderRadius: 12,
+  },
   authContainer: {
     marginTop: 10,
     display: 'flex',
@@ -77,6 +128,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 5,
+    fontSize: 16,
+  },
+  fpassword: {
+    fontSize: 16,
+    color: 'gray',
+    textAlign: 'center',
+    marginTop: 20,
   },
   text0: {
     marginLeft: 20,
@@ -85,6 +143,14 @@ const styles = StyleSheet.create({
   text1: {
     color: 'gray',
     fontSize: 16,
+  },
+  buttomText: {
+    fontSize: 16,
+    color: '#000',
+    marginTop: 20,
+    marginBottom: 20,
+    paddingLeft: 20,
+    fontWeight: 'bold',
   },
   textInput1: {
     borderWidth: 1,
@@ -125,5 +191,63 @@ const styles = StyleSheet.create({
     padding: 10,
     color: 'black',
     fontSize: 16,
+  },
+  button: {
+    backgroundColor: '#28b310',
+    marginHorizontal: 20,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginTop: 20,
+  },
+  facebook: {
+    backgroundColor: '#4285F4',
+    marginHorizontal: 20,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginTop: 20,
+  },
+  google: {
+    backgroundColor: '#EA4335',
+    marginHorizontal: 20,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginTop: 20,
+  },
+  or: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginBottom: 10,
+    color: 'black',
+  },
+  createAccount: {
+    backgroundColor: 'white',
+    alignContent: 'center',
+    justifyContent: 'center',
+    height: 40,
+    marginHorizontal: 100,
+    borderRadius: 12,
+    borderColor: '#28b310',
+    borderWidth: 1,
+    alignItems: 'flex-end',
+    display: 'flex',
+  },
+  createAccountText: {
+    color: '#28b310',
+    fontSize: 16,
+    fontWeight: 'bold',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 1,
   },
 });

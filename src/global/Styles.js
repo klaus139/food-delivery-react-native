@@ -15,6 +15,15 @@ export const parameters = {
   headerHeight: 40,
 };
 
+export const buttons = {
+  signin: {
+    backgroundColor: '#28b310',
+  },
+  signinText: {
+    color: 'white',
+  },
+};
+
 export const title = {
   color: '#28b310',
   fontSize: 25,
