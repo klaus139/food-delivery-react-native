@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {TransitionPresets} from '@react-navigation/stack';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
+//rimport {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SigninWelcomeScreen from '../screens/authScreens/SigninWelcomeScreen';
 import SigninScreen from '../screens/authScreens/SigninScreen';
-
-const AuthStack = createNativeStackNavigator();
+import HomeScreen from '../screens/HomeScreen';
+const AuthStack = createStackNavigator();
 
 export default function AuthNavigator() {
   return (
@@ -21,6 +21,14 @@ export default function AuthNavigator() {
       <AuthStack.Screen
         name="SigninScreen"
         component={SigninScreen}
+        options={{
+          headerShown: false,
+          ...TransitionPresets.RevealFromBottomAndroid,
+        }}
+      />
+      <AuthStack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           headerShown: false,
           ...TransitionPresets.RevealFromBottomAndroid,

@@ -1,21 +1,33 @@
 import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+} from 'react-native';
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors, parameters} from '../global/Styles';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+//import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+// import SigninWelcomeScreen from '../screens/authScreens/SigninWelcomeScreen';
+// import { useNavigation } from '@react-navigation/native';
 //import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 export default function Header({title, type}) {
+  //   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.header}>
-      <View style={styles.container}>
-        <FontAwesomeIcon
+      <TouchableOpacity style={styles.container}>
+        {/* <FontAwesomeIcon
           icon={type}
-          size={30}
+          size={25}
           color={colors.headerText}
-          onPress={() => {}}
-        />
-      </View>
+          //make the screen go back to the previous screen
+          onPress={() => {
+            navigation.goBack();
+          }}
+        /> */}
+      </TouchableOpacity>
       <View style={styles.container}>
         <Text style={styles.headerText}>{title}</Text>
       </View>

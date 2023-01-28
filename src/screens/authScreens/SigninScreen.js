@@ -17,7 +17,7 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faLock} from '@fortawesome/free-solid-svg-icons';
 import {Button} from 'react-native-elements';
 
-export default function SigninScreen() {
+export default function SigninScreen({navigation}) {
   //const [textInput2Forcast, setTextInput2Forcast] = useState(false);
 
   const textInput1 = useRef(1);
@@ -25,7 +25,7 @@ export default function SigninScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title=" MY ACCOUNT" type={faArrowLeft} />
+      <Header title=" MY ACCOUNT" type={faArrowLeft} navigation={navigation} />
       <View style={styles.text0}>
         <Text style={title}>Sign In</Text>
       </View>
@@ -71,7 +71,13 @@ export default function SigninScreen() {
         </View>
       </View>
       <TouchableOpacity>
-        <Button title="SIGN IN" buttonStyle={styles.button} />
+        <Button
+          title="SIGN IN"
+          buttonStyle={styles.button}
+          onPress={() => {
+            navigation.navigate('HomeScreen');
+          }}
+        />
       </TouchableOpacity>
       <View>
         <Text style={styles.fpassword}>Forgot Password?</Text>
@@ -94,7 +100,7 @@ export default function SigninScreen() {
         />
       </TouchableOpacity>
       <View>
-        <Text style={styles.buttomText}>New on XpressFood?</Text>
+        <Text style={styles.buttomText}>New on KZeeFood?</Text>
       </View>
       <TouchableOpacity onPress={() => {}}>
         <Button
