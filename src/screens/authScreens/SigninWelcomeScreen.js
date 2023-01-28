@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 
 import {
@@ -8,15 +9,17 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {buttons, colors, parameters} from '../../global/Styles';
+import {buttons, colors} from '../../global/Styles';
 import Swiper from 'react-native-swiper';
 import {Button} from 'react-native-elements';
+//import {useNavigation} from '@react-navigation/native';
 // import * as Animatable from 'react-native-animatable';
 // import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 // import {faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
 // import {Button} from 'react-native-elements';
 
-export default function SigninWelcomeScreen() {
+export default function SigninWelcomeScreen({navigation}) {
+  // const {navigation} = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headview}>
@@ -65,7 +68,7 @@ export default function SigninWelcomeScreen() {
             title="SIGN IN"
             buttonStyle={buttons.signin}
             titleStyle={buttons.signinText}
-            onPress={() => {}}
+            onPress={() => navigation.navigate('SigninScreen')}
           />
         </View>
         <TouchableOpacity onPress={() => {}}>
