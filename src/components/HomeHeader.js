@@ -13,8 +13,6 @@ import {colors, parameters} from '../global/Styles';
 import {Avatar, Badge, Icon, withBadge} from '@rneui/themed';
 
 export default function HomeHeader() {
-  
-
   return (
     <SafeAreaView style={styles.header}>
       <View style={styles.iconStyles}>
@@ -62,10 +60,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  cartView:{
+  cartView: {
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 15,
-   
   },
 });
