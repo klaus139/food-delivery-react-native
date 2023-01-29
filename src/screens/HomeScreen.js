@@ -5,11 +5,11 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  SafeAreaView,
   ScrollView,
   FlatList,
   Pressable,
   Image,
+  Dimensions,
 } from 'react-native';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -19,10 +19,12 @@ import {
   faSort,
 } from '@fortawesome/free-solid-svg-icons';
 
+import FoodCard from '../components/FoodCard';
 import HomeHeader from '../components/HomeHeader';
 import {colors} from '../global/Styles';
-import {filterData} from '../global/data';
+import {filterData, restaurantsData} from '../global/data';
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function HomeScreen() {
   const [delivery, setDelivery] = useState(true);
   const [indexCheck, setIndexCheck] = useState('0');
@@ -119,6 +121,43 @@ export default function HomeScreen() {
         </View>
         <View style={styles.categoriesView}>
           <Text style={styles.categoriesText}>Free delivery now</Text>
+        </View>
+
+        <View>
+          {/* <FlatList
+            style={{marginBottom: 20, marginTop: 10}}
+            horizontal={true}
+            data={restaurantsData}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item}) => (
+              <View>
+                <FoodCard
+                  screenWidth={SCREEN_WIDTH*0.8}
+                  images={item.images}
+                />
+              </View>
+            )}
+          /> */}
+          <FlatList
+            style={{marginTop: 10, marginBottom: 10}}
+            horizontal={true}
+            data={restaurantsData}
+            keyExtractor={(item, index) => index.toString()}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item}) => (
+              <View style={{marginRight: 5}}>
+                <FoodCard
+                  screenWidth={SCREEN_WIDTH * 0.8}
+                  images={item.images}
+                  restaurantName={item.restaurantName}
+                  farAway={item.farAway}
+                  businessAddress={item.businessAddress}
+                  averageReview={item.averageReview}
+                  numberOfReview={item.numberOfReview}
+                />
+              </View>
+            )}
+          />
         </View>
       </ScrollView>
     </View>
