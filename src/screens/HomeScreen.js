@@ -33,7 +33,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <HomeHeader />
       <ScrollView stickyHeaderIndices={[0]} showsVerticalScrollIndicator={true}>
-        <View>
+        <View style={{backgroundColor: colors.cardbackground, paddingBottom: 5}}>
           <View style={styles.buttonStyle}>
             <TouchableOpacity
               onPress={() => {
@@ -124,20 +124,6 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          {/* <FlatList
-            style={{marginBottom: 20, marginTop: 10}}
-            horizontal={true}
-            data={restaurantsData}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item}) => (
-              <View>
-                <FoodCard
-                  screenWidth={SCREEN_WIDTH*0.8}
-                  images={item.images}
-                />
-              </View>
-            )}
-          /> */}
           <FlatList
             style={{marginTop: 10, marginBottom: 10}}
             horizontal={true}
@@ -158,6 +144,51 @@ export default function HomeScreen() {
               </View>
             )}
           />
+        </View>
+        <View style={styles.categoriesView}>
+          <Text style={styles.categoriesText}>Promotions available</Text>
+        </View>
+
+        <View>
+          <FlatList
+            style={{marginTop: 10, marginBottom: 10}}
+            horizontal={true}
+            data={restaurantsData}
+            keyExtractor={(item, index) => index.toString()}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item}) => (
+              <View style={{marginRight: 5}}>
+                <FoodCard
+                  screenWidth={SCREEN_WIDTH * 0.8}
+                  images={item.images}
+                  restaurantName={item.restaurantName}
+                  farAway={item.farAway}
+                  businessAddress={item.businessAddress}
+                  averageReview={item.averageReview}
+                  numberOfReview={item.numberOfReview}
+                />
+              </View>
+            )}
+          />
+        </View>
+
+        <View style={styles.categoriesView}>
+          <Text style={styles.categoriesText}>Restaurants in your area</Text>
+        </View>
+        <View style={{width: SCREEN_WIDTH, paddingTop: 10}}>
+          {restaurantsData.map(item => (
+            <View key={item.id} style={{paddingBottom: 20}}>
+              <FoodCard
+                screenWidth={SCREEN_WIDTH * 0.95}
+                images={item.images}
+                restaurantName={item.restaurantName}
+                farAway={item.farAway}
+                businessAddress={item.businessAddress}
+                averageReview={item.averageReview}
+                numberOfReview={item.numberOfReview}
+              />
+            </View>
+          ))}
         </View>
       </ScrollView>
     </View>
