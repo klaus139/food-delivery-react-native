@@ -12,6 +12,8 @@ import {
   Dimensions,
 } from 'react-native';
 
+import CountDown from 'react-native-countdown-component';
+
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faLocationDot,
@@ -33,7 +35,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <HomeHeader />
       <ScrollView stickyHeaderIndices={[0]} showsVerticalScrollIndicator={true}>
-        <View style={{backgroundColor: colors.cardbackground, paddingBottom: 5}}>
+        <View style={{backgroundColor: colors.gray5, paddingBottom: 5}}>
           <View style={styles.buttonStyle}>
             <TouchableOpacity
               onPress={() => {
@@ -121,6 +123,19 @@ export default function HomeScreen() {
         </View>
         <View style={styles.categoriesView}>
           <Text style={styles.categoriesText}>Free delivery now</Text>
+        </View>
+
+        {/* //the counter goes here */}
+        <View style={styles.countdown}>
+          <Text style={styles.countdownText}>Options changing in</Text>
+          <CountDown
+            until={1200}
+            size={15}
+            digitStyle={{backgroundColor: colors.gray5}}
+            digitTxtStyle={{color: '#1CC625'}}
+            timeToShow={['M', 'S']}
+            timeLabels={{m: 'MM', s: 'SS'}}
+          />
         </View>
 
         <View>
@@ -298,5 +313,17 @@ const styles = StyleSheet.create({
   flatListTextSelected: {
     fontWeight: 'bold',
     color: colors.headerText,
+  },
+  countdown: {
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+  countdownText: {
+    marginLeft: 15,
+    fontSize: 15,
+    marginTop: 10,
+    marginRight: 5,
+    color: colors.gray1,
+    fontWeight: 'bold',
   },
 });
